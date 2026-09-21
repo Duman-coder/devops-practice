@@ -1,0 +1,12 @@
+services:
+  web:
+    image: nginx
+    container_name: my-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ~/nginx-site:/usr/share/nginx/html
+
+  pinger:
+    build: .
+    container_name: ping-checker
